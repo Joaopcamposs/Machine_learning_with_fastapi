@@ -15,13 +15,11 @@ pipe = StableDiffusionPipeline.from_pretrained(
     torch_dtype=torch.float16,
     use_auth_token=token,
 )
-
 pipe.to("cuda")
 
-prompt = "a photograph of an astronaut riding a horse"
-
-image = pipe(prompt).images[0]
-image.show()
+# prompt = "a photograph of an astronaut riding a horse"
+# image = pipe(prompt).images[0]
+# image.show()
 
 
 def obtain_image(
@@ -41,5 +39,7 @@ def obtain_image(
     ).images[0]
     return image
 
-
 # image = obtain_image(prompt, num_inference_steps=5, seed=1024)
+# image.show()
+
+# referee: https://huggingface.co/blog/stable_diffusion
